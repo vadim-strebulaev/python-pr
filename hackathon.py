@@ -11,7 +11,7 @@ for infile in os.listdir("./"):
        # print "is tif or bmp"
        outfile = infile[:-3] + "jpeg"
        im = Image.open(infile)
-       print("new filename : " + outfile)
+       print("nju filename : " + outfile)
        out = im.convert("RGB")
        out.save(outfile, "JPEG", quality=90)
 # загружаем файл
