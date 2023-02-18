@@ -175,16 +175,40 @@
 #             print(i)
 #$&
 
-for i in range(289_123_456, 389_123_456, 1):
-    count = 0
-    if i**0.5 == int(i**0.5):
-        for j in range(2, int(i**0.5) + 1):
-            if i%j==0:
-                if j==i//j:
-                    count += 1
-                else:
-                    count +=2
-                if count > 3:
-                    break
-        if count == 3:
-            print(i)
+# for i in range(289_123_456, 389_123_456, 1):
+#     count = 0
+#     if i**0.5 == int(i**0.5):
+#         for j in range(2, int(i**0.5) + 1):
+#             if i%j==0:
+#                 if j==i//j:
+#                     count += 1
+#                 else:
+#                     count +=2
+#                 if count > 3:
+#                     break
+#         if count == 3:
+#             print(i)
+# import random
+# a = [43, 23, 67, 57, 1, 2,]
+# while True:
+#     random.shuffle(a)
+#     print(a)
+#     if a == sorted(a):
+#         break
+
+
+# a = [1, 1]
+# b = [2, 2]
+
+# A = sum(a)
+# B = sum(b)
+# n = (max(A, B) - min(A, B)) / 2
+# for i in a:
+#     for j in b:
+#         if max(i, j) - min(i, j) == n:
+#             if max(i, j) == i and A > B:
+#                 print ([i, j])
+#             elif max(i, j) == j and B > A:
+#                 print ([i, j])
+k = 9; e = 20
+print(k, e)
