@@ -104,10 +104,65 @@
 
 
 # leetcode
-nums = [2, 7, 11, 15]
-target = 9
-for i in range(len(nums)):
-    for j in range(len(nums)):
-        if i != j:
-            if nums[i] + nums[j] == target:
-                print([i, j])
+# nums = [2, 7, 11, 15]
+# target = 9
+# for i in range(len(nums)):
+#     for j in range(len(nums)):
+#         if i != j:
+#             if nums[i] + nums[j] == target:
+#                 print([i, j])
+
+
+
+
+#
+# k = int(input())
+# i = k
+# s = 0
+# while i != 0:
+#     i //= 2
+#     s += i
+#     print(i)
+
+# a = [i for i in range(1, k + 1)]
+# lenght = 0 
+# n = 1
+# while True:
+#     n += 1
+#     if 2 ** n > len(a) - 1:
+#         a.extend([0] * (2 ** n - len(a)))
+#         break
+# c = 0
+# while c < len(a) - 1:
+#     a.append(a[c] + a[c + 1])
+#     c += 2
+# print(a)
+
+
+import cv2 
+import numpy as np
+def convert_to_ascii(image, scale=100):
+    ascii_chars = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ","]
+    ascii_char_count = len(ascii_chars)
+    
+    # Open the image and resize it
+
+    image = cv2.resize(image, (100, 50))
+    image_array = np.array(image)
+
+    # Normalize the image array so that the values are between 0 and 1
+    image_array = image_array / 255
+
+    # Convert the image array to ASCII characters
+    result = ""
+    for row in image_array:
+        for pixel in row:
+            average = int(np.average(pixel) * ascii_char_count)
+            result += ascii_chars[average % ascii_char_count]
+        result += "\n"
+
+    return result
+image_path = "C:\\Users\\Vadim\\Documents\\photo_2022-03-07_15-58-05.jpg"
+image = cv2.imread(image_path)
+ascii_art = convert_to_ascii(image, scale=100)
+print(ascii_art)

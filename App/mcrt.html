@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Уведомление о прибытии</title>
+</head>
+<body>
+  <script>
+    function showNotification() {
+      var notification = new Notification("Вы на месте!", {
+        body: "Вы прибыли на указанное вами место!"
+      });
+    }
+    showNotification();
+  </script>
+</body>
+</html>
